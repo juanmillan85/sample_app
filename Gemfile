@@ -8,6 +8,8 @@ group :development, :test do
 gem 'sqlite3'
 gem 'haml-rails'
 gem 'rspec-rails'
+gem 'ZenTest'
+gem 'simplecov',:require=>false
 #gem 'spork'
 #gem 'webrat'
 gem 'capybara'
