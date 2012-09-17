@@ -16,6 +16,7 @@ gem 'capybara'
 end
 group :production do
 gem 'pg'
+gem 'haml'
 end
 
 
