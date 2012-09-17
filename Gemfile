@@ -16,9 +16,9 @@ gem 'capybara'
 end
 group :production do
 gem 'pg'
-gem 'haml'
-end
 
+end
+gem 'haml'
 
 # Gems used only for assets and not required
 # in production environments by default.
