@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe PagesController do
   render_views
+  
   describe "GET 'home'" do
     it "returns http success" do
       get 'home'
@@ -16,6 +17,11 @@ describe PagesController do
     response.body.should have_selector("head title",:text=>"Programacion Orientada A La Web | Home")
     end
     
+    # que el body de una pagina html no este vacio, como hacemos eso
+    it "should have a non-blank body" do
+      get "home"
+      response.body.should_not =~ /<body>\s*<\/body>/
+    end
   end
 
   describe "GET 'contact'" do

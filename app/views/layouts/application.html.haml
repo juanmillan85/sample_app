@@ -1,8 +1,10 @@
 !!! 5
 %html
   %head
-    =csrf_meta_tags
-    %title= @title
+    =stylesheet_link_tag 'blueprint/screen', :media=>'screen'
+    =stylesheet_link_tag 'blueprint/print', :media=>'print'
+    =csrf_meta_tags #ya sabe que hace esto?
+    %title= title
   %body
     = yield
    

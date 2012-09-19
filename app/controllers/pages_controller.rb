@@ -1,14 +1,14 @@
 class PagesController < ApplicationController
   def home
-    @title="Programacion Orientada A La Web | Home"
+    @title="Home"
   end
 
   def contact
-     @title="Programacion Orientada A La Web | Contact"
+     @title="Contact"
   end
 
   def about
-     @title="Programacion Orientada A La Web | About"
+     @title="About"
   end
 
 end
