@@ -1,0 +1,106 @@
+Configurando
+sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo apt-get update
+sudo apt-get install sublime-text-dev
+
+Eliminando Bundle Exec
+Ruby Version Manager
+sudo apt-get install ruby-rvm
+Actualizando a la ultima version
+sudo  rvm get head
+rvm reload
+rvm -v
+bundle install --without production
+gem 'guard-rspec', '1.2.1'
+# Test gems on Linux
+group :test do
+  gem 'capybara', '1.1.2'
+  gem 'rb-inotify', '0.8.8'
+  gem 'libnotify', '0.5.9'
+end 
+
+guard init rspec
+
+guard 'rspec', :version => 2, :all_after_pass => false do
+#en una consola
+guard
+#Spork loads the environment once, and then maintains a pool of processes for running future tests. Spork is particularly useful when combined with Guard
+  .
+  .
+  .
+  gem 'guard-spork', '1.2.0'
+  gem 'spork', '0.9.2'
+end
+bundle install
+spork --bootstrap
+
+spec/spec_helper.rb
+require 'rubygems'
+require 'spork'
+
+Spork.prefork do
+  # Loading more in this block will cause your tests to run faster. However, 
+  # if you change any configuration or code from libraries loaded here, you'll
+  # need to restart spork for it take effect.
+  # This file is copied to spec/ when you run 'rails generate rspec:install'
+  ENV["RAILS_ENV"] ||= 'test'
+  require File.expand_path("../../config/environment", __FILE__)
+  require 'rspec/rails'
+  require 'rspec/autorun'
+
+  # Requires supporting ruby files with custom matchers and macros, etc,
+  # in spec/support/ and its subdirectories.
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+  RSpec.configure do |config|
+    # == Mock Framework
+    #
+    # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
+    #
+    # config.mock_with :mocha
+    # config.mock_with :flexmock
+    # config.mock_with :rr
+    config.mock_with :rspec
+
+    # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+    config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+    # If you're not using ActiveRecord, or you'd prefer not to run each of your
+    # examples within a transaction, remove the following line or assign false
+    # instead of true.
+    config.use_transactional_fixtures = true
+
+    # If true, the base class of anonymous controllers will be inferred
+    # automatically. This will be the default behavior in future versions of
+    # rspec-rails.
+    config.infer_base_class_for_anonymous_controllers = false
+  end
+end
+
+Spork.each_run do
+  # This code will be run each time you run your specs.
+
+end
+
+Before running Spork, we can get a baseline for the testing overhe
+
+time rspec
+spork
+.rspec
+
+One word of advice when using Spork: after changing a file included in the prefork loading (such as routes.rb), you will have to restart the Spork server to load the new Rails environment. If your tests are failing when you think they should be passing, quit the Spork server with Ctrl-C and restart it:
+
+guardfile
+require 'active_support/core_ext'
+
+guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' } do
+  watch('config/application.rb')
+  watch('config/environment.rb')
+  watch(%r{^config/environments/.+\.rb$})
+  watch(%r{^config/initializers/.+\.rb$})
+  watch('Gemfile')
+  watch('Gemfile.lock')
+  watch('spec/spec_helper.rb')
+  watch('test/test_helper.rb')
+  watch('spec/support/')
+end
