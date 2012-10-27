@@ -1,5 +1,6 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
+<<<<<<< HEAD
 
     require 'active_support/core_ext'
      
@@ -17,6 +18,24 @@ end
 
 guard 'rspec', :version => 2, :all_after_pass=> false,:cli=>'--drb' do
 
+=======
+require 'active_support/core_ext'
+
+guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' } do
+  watch('config/application.rb')
+  watch('config/environment.rb')
+  watch(%r{^config/environments/.+\.rb$})
+  watch(%r{^config/initializers/.+\.rb$})
+  watch('Gemfile')
+  watch('Gemfile.lock')
+  watch('spec/spec_helper.rb')
+  watch('test/test_helper.rb')
+  watch('spec/support/')
+end
+
+#guard 'rspec', :version => 2 do
+ guard 'rspec', :version => 2, :all_after_pass => false do
+>>>>>>> 8a09d0358f7a1429f663f0a69c48b50112c5edb3
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
