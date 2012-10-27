@@ -1,0 +1,37 @@
+!!!
+%html
+  = partial('trst_sys/shared/html-head')
+
+  %body{:id => "srv",:'data-lang' => current_lang}
+  #main.wrap
+    %header#header
+      = partial('trst_sys/shared/header')
+    %nav#menu
+      = partial('trst_sys/shared/menu')
+    %section#content
+      %article#xhr_content
+        = yield
+      %article#xhr_msg.hidden
+    %section#sidebar
+      = partial('trst_sys/shared/sidebar')
+    %section#main_footer.wrap
+  %footer#footer.wrap
+    = partial('trst_sys/shared/footer')
+
+!!!
+%html
+  %head
+    %title= yield(:title)
+    = yield(:head)
+  %body
+    = yield
+ -l
+view.haml
+
+- content_for(:title, 'My title')
+- content_for(:head) do
+  = javascript_include_tag :foo
+
+%h1 My view!
+   
+%

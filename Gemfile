@@ -10,7 +10,11 @@ gem 'haml-rails'
 gem 'rspec-rails'
 gem 'ZenTest'
 gem 'simplecov',:require=>false
-#gem 'spork'
+gem 'guard-rspec'
+gem 'rb-inotify'
+gem 'libnotify'
+gem 'spork'
+gem 'guard-spork'
 #gem 'webrat'
 gem 'capybara'
 end

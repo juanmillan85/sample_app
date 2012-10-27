@@ -36,6 +36,13 @@ describe PagesController do
       get 'about'
       response.should be_success
     end
+    it "should have the right title" do
+    #<title> Programacion Orientada A La Web | Home </title>
+    get 'about'
+    
+   # response.body.should have_selector("title:contains('Programacion Orientada A La Web | Home')")
+    response.body.should have_selector("head title",:text=>"Programacion Orientada A La Web | About")
+    end
   end
   
 end
