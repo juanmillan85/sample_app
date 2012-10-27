@@ -6,16 +6,12 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 group :development, :test do
 gem 'sqlite3'
-<<<<<<< HEAD
 
-=======
-gem 'guard-rspec', '1.2.1'
->>>>>>> 8a09d0358f7a1429f663f0a69c48b50112c5edb3
 gem 'haml-rails'
 gem 'rspec-rails'
 gem 'ZenTest'
 gem 'simplecov',:require=>false
-<<<<<<< HEAD
+
 
 gem 'guard-rspec'
 gem 'rb-inotify'
@@ -23,12 +19,7 @@ gem 'libnotify'
 gem 'spork'
 gem 'guard-spork'
 
-=======
-gem 'rb-inotify', '0.8.8'
-gem 'libnotify', '0.5.9'
-gem 'guard-spork', '1.2.0'
-gem 'spork', '0.9.2'
->>>>>>> 8a09d0358f7a1429f663f0a69c48b50112c5edb3
+
 #gem 'webrat'
 gem 'capybara'
 end
