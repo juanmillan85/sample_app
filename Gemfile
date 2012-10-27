@@ -6,15 +6,18 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 group :development, :test do
 gem 'sqlite3'
+
 gem 'haml-rails'
 gem 'rspec-rails'
 gem 'ZenTest'
 gem 'simplecov',:require=>false
+
 gem 'guard-rspec'
 gem 'rb-inotify'
 gem 'libnotify'
 gem 'spork'
 gem 'guard-spork'
+
 #gem 'webrat'
 gem 'capybara'
 end
