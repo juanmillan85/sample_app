@@ -1,0 +1,13 @@
+%header.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      =link_to "Social Search", root_path, :id=> "brand"
+      %strong
+        %nav
+          %ul.nav.pull-right
+            %li
+              =link_to "Home", root_path
+            %li
+              =link_to "Help", help_path
+            %li               
+              =link_to "Sign in", signup_path

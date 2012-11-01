@@ -1,2 +1,7 @@
-%h1 Pages#home
-%p Find me in app/views/pages/home.html.haml
+.center.hero-unit
+  %h1 Welcome to The Start UP
+  %h2
+    :markdown
+      This is my big idea [Social Search](http://topsy.com).Please, **For the love of [God](http://www.god.com/),**don't use [Haml](http://haml-lang.com) for marking-up your content! 
+  = link_to "Sign up now!", signup_path, :class=> "btn btn-large btn-primary"
+= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'
