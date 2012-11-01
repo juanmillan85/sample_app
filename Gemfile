@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'bootstrap-sass','2.0.4'#framework css3 de twitter
 gem 'maruku'# este es para trabajar con markdown
+gem 'annotate','2.5.0', group: :development
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 group :development, :test do
